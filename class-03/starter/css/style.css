@@ -1,0 +1,64 @@
+/*
+  Bean & Byte Café: our own styles.
+  This file is linked AFTER Bootstrap, so when both set the same thing, our rule wins.
+
+  A rule looks like this:
+
+    selector {
+      property: value;
+    }
+
+  Save the file and look at the browser after every rule.
+*/
+
+/* ---------- The whole site ---------- */
+
+/* TODO 2 (Part A): Style the whole page. Select body and set:
+   background-color: #fbf5ec   (cream)
+   color: #2a1d15              (dark brown text, softer than black)
+   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif
+   line-height: 1.6 */
+
+
+/* TODO 3 (Part A): Select h1, h2, h3 (one rule, commas between them) and set:
+   font-family: Georgia, "Times New Roman", serif
+   color: #3b2418              (espresso brown) */
+
+
+/* TODO 4 (Part A): Links. Select a and set color: #a8601f
+   Then a second rule for a:hover (when the mouse is over a link) with color: #3b2418 */
+
+
+/* TODO 5 (Part A): The box model. Select .box (the sections with class="box") and set:
+   background-color: #ffffff
+   border: 1px solid #e6d9ca
+   border-radius: 12px
+   padding: 24px               (space INSIDE the border)
+   margin-bottom: 24px         (space OUTSIDE, below the box) */
+
+
+/* TODO 6 (Part A): Flexbox. Opening hours with the day on the left and the time on the right.
+   .hours        list-style: none; padding: 0;
+   .hours li     display: flex; justify-content: space-between;
+                 padding: 8px 0; border-bottom: 1px dashed #e6d9ca; */
+
+
+/* TODO 7 (Part A): The footer bar.
+   footer        background-color: #3b2418; color: #fbf5ec; text-align: center;
+                 padding: 24px; margin-top: 40px;
+   footer p      margin: 0;
+   footer a      color: #f6c98f; */
+
+
+/* ---------- Our touches on top of Bootstrap ---------- */
+
+/* TODO 11 (Part B): Two classes of our own to use with Bootstrap.
+   .bg-espresso          background-color: #3b2418;
+   .btn-cafe             background-color: #c8873a; border-color: #c8873a; color: #ffffff;
+   .btn-cafe:hover       background-color: #3b2418; border-color: #3b2418; color: #ffffff; */
+
+
+/* TODO 17 (Part C): The menu cards.
+   .menu-photo   height: 200px; padding: 16px; object-fit: contain; background-color: #f6ead9;
+   .price        font-weight: 700; color: #a8601f; */
+

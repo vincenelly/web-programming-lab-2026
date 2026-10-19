@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean &amp; Byte Café | Home</title>
+
+  <!-- TODO 8 (Part B): Add Bootstrap's CSS here, ABOVE your style.css link.
+       Copy the <link> from the README. Then also do TODO 8 at the bottom of this file. -->
+
+  <!-- TODO 1 (Part A): Link your stylesheet. Write this line here:
+       <link rel="stylesheet" href="css/style.css"> -->
+</head>
+<body>
+  <!-- TODO 9 (Part B): Replace this whole <header> with the Bootstrap navbar from the README.
+       Change bg-dark to bg-espresso (our colour, TODO 11). -->
+  <header>
+    <img src="images/logo.svg" alt="Bean &amp; Byte Café logo" width="80" height="80">
+    <h1>Bean &amp; Byte Café</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="order.html">Order</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- TODO 10 (Part B):
+       - Give <main> the classes container and py-4
+       - Banner section: class="text-center mb-4", and class="img-fluid rounded" on the image
+       - Change the "Fresh coffee" paragraph into <h1 class="mt-4">Fresh coffee. Fast Wi-Fi.</h1>
+         and add <p class="lead">Your study spot at UNIMAS.</p>
+       - Move the two links from "About us" here, as buttons:
+         See our menu  -> class="btn btn-cafe btn-lg"
+         Order ahead   -> class="btn btn-outline-dark btn-lg" -->
+  <main>
+    <section>
+      <img src="images/hero.svg" alt="A cup of coffee next to the words Bean and Byte Café" width="800" height="267">
+      <p><strong>Fresh coffee. Fast Wi-Fi.</strong></p>
+    </section>
+
+    <!-- class="box" is styled by you in TODO 5 -->
+    <!-- TODO 12 (Part B): Put "About us" and "Opening hours" side by side on laptops:
+         wrap both sections in <div class="row">, and each one in <div class="col-md-6"> -->
+    <section class="box">
+      <h2>About us</h2>
+      <p>
+        Your study spot at UNIMAS. We serve <strong>freshly roasted coffee</strong>,
+        homemade pastries and the fastest Wi-Fi on campus. Bring your laptop and stay a while.
+      </p>
+      <p><a href="menu.html">See our menu</a> or <a href="order.html">order ahead</a> and skip the queue.</p>
+    </section>
+
+    <section class="box">
+      <h2>Opening hours</h2>
+      <!-- Each day and time is in its own <span>, so CSS can push them apart (TODO 6) -->
+      <ul class="hours">
+        <li><span>Monday – Friday</span> <span>8:00 am – 8:00 pm</span></li>
+        <li><span>Saturday</span> <span>9:00 am – 6:00 pm</span></li>
+        <li><span>Sunday</span> <strong>Closed</strong></li>
+      </ul>
+    </section>
+
+    <section class="box">
+      <h2>Find us</h2>
+      <p>
+        Near the main library<br>
+        UNIMAS, Kota Samarahan<br>
+        Sarawak
+      </p>
+      <!-- TODO 13 (Part B): Make the map fit any screen. Wrap the iframe in <div class="ratio ratio-16x9">
+           and delete its width and height attributes. -->
+      <iframe
+        src="https://maps.google.com/maps?q=Universiti+Malaysia+Sarawak&z=15&output=embed"
+        width="600"
+        height="400"
+        title="Map showing UNIMAS, where Bean &amp; Byte Café is"
+        loading="lazy">
+      </iframe>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Bean &amp; Byte Café · <a href="mailto:hello@beanandbyte.example">hello@beanandbyte.example</a></p>
+  </footer>
+
+  <!-- TODO 8 (Part B), continued: add Bootstrap's <script> here, just before </body>.
+       Copy it from the README. It makes the navbar's phone menu button work. -->
+</body>
+</html>
