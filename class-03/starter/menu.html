@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean &amp; Byte Café | Menu</title>
+
+  <!-- TODO 14 (Part C): Add Bootstrap's CSS here, the same <link> as in your index.html -->
+
+  <!-- Our own CSS comes AFTER Bootstrap, so our rules win -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- TODO 14 (Part C): Replace this <header> with the navbar from your index.html.
+       Make "Menu" the active link: move class="active" and aria-current="page" to it. -->
+  <header>
+    <img src="images/logo.svg" alt="Bean &amp; Byte Café logo" width="80" height="80">
+    <h1>Bean &amp; Byte Café</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="order.html">Order</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- TODO 14 (Part C): Give <main> the classes container and py-4.
+       The navbar has no <h1> any more, so change "Our Menu" to an <h1>, and give the next paragraph class="lead". -->
+  <main>
+    <h2>Our Menu</h2>
+    <p>All drinks come in regular size. Ask us about oat or soy milk.</p>
+
+    <h2 class="mt-4 mb-3">Drinks</h2>
+    <!-- Each card is a column: 1 per row on phones, 2 on tablets (sm), 3 on laptops (lg) -->
+    <div class="row">
+      <div class="col-12 col-sm-6 col-lg-4 mb-4">
+        <div class="card h-100">
+          <img src="images/espresso.svg" class="card-img-top menu-photo" alt="A cup of espresso">
+          <div class="card-body">
+            <h3 class="card-title h5">Espresso</h3>
+            <p class="card-text">A short, strong shot of coffee.</p>
+          </div>
+          <div class="card-footer d-flex justify-content-between align-items-center">
+            <span class="price">RM 7.00</span>
+            <a href="order.html" class="btn btn-cafe btn-sm">Order</a>
+          </div>
+        </div>
+      </div>
+      <!-- TODO 15 (Part C): Add the Latte and Matcha Latte cards here.
+           Copy the Espresso card above and change the image, alt text, name, description and price.
+           You'll find them in the old table below. -->
+    </div>
+
+    <h2 class="mt-2 mb-3">Food</h2>
+    <!-- TODO 16 (Part C): Add a <div class="row"> with 3 cards: Croissant, Blueberry Muffin and Chocolate Cake.
+         Then delete the old table and the "Ready to order?" link (every card has an Order button now),
+         and add this note: <p class="text-muted small">Prices in RM, tax included. Images are for illustration only.</p> -->
+
+    <!-- The old menu table from Class 2. Copy what you need into the cards, then delete it (TODO 16). -->
+    <table border="1">
+      <caption>Bean &amp; Byte Café menu</caption>
+      <thead>
+        <tr>
+          <th>Photo</th>
+          <th>Item</th>
+          <th>Description</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <!-- colspan="4" makes one cell stretch across all 4 columns -->
+        <tr>
+          <th colspan="4">Drinks</th>
+        </tr>
+        <tr>
+          <td><img src="images/espresso.svg" alt="A cup of espresso" width="80" height="80"></td>
+          <td>Espresso</td>
+          <td>A short, strong shot of coffee.</td>
+          <td>RM 7.00</td>
+        </tr>
+        <tr>
+          <td><img src="images/latte.svg" alt="A glass of latte" width="80" height="80"></td>
+          <td>Latte</td>
+          <td>Espresso with steamed milk and a layer of foam.</td>
+          <td>RM 11.00</td>
+        </tr>
+        <tr>
+          <td><img src="images/matcha-latte.svg" alt="A glass of matcha latte" width="80" height="80"></td>
+          <td>Matcha Latte</td>
+          <td>Japanese green tea whisked with steamed milk.</td>
+          <td>RM 13.00</td>
+        </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <th colspan="4">Food</th>
+        </tr>
+        <tr>
+          <td><img src="images/croissant.svg" alt="A croissant" width="80" height="80"></td>
+          <td>Croissant</td>
+          <td>Buttery, flaky and baked fresh every morning.</td>
+          <td>RM 8.00</td>
+        </tr>
+        <tr>
+          <td><img src="images/muffin.svg" alt="A blueberry muffin" width="80" height="80"></td>
+          <td>Blueberry Muffin</td>
+          <td>Soft muffin packed with blueberries.</td>
+          <td>RM 7.50</td>
+        </tr>
+        <tr>
+          <td><img src="images/chocolate-cake.svg" alt="A chocolate cake with a cherry on top" width="80" height="80"></td>
+          <td>Chocolate Cake</td>
+          <td>Rich chocolate cake. Our best seller!</td>
+          <td>RM 12.00</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td colspan="4">Prices in RM, tax included. Images are for illustration only.</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <p><a href="order.html">Ready to order?</a></p>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Bean &amp; Byte Café · <a href="mailto:hello@beanandbyte.example">hello@beanandbyte.example</a></p>
+  </footer>
+
+  <!-- TODO 14 (Part C): Add Bootstrap's <script> here, the same as in your index.html -->
+</body>
+</html>

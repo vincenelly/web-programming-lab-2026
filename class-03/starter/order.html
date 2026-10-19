@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean &amp; Byte Café | Order</title>
+
+  <!-- TODO 18 (Part C): Add Bootstrap's CSS here, the same <link> as in your index.html -->
+
+  <!-- Our own CSS comes AFTER Bootstrap, so our rules win -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- TODO 18 (Part C): Replace this <header> with the navbar from your index.html, with "Order" as the active link -->
+  <header>
+    <img src="images/logo.svg" alt="Bean &amp; Byte Café logo" width="80" height="80">
+    <h1>Bean &amp; Byte Café</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="order.html">Order</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- TODO 18 (Part C): <main class="container py-4">, change "Order Ahead" to an <h1>, and class="lead" on the next paragraph.
+       Then wrap the <form> in <div class="row"> and <div class="col-lg-8">, so it isn't too wide on laptops,
+       and give every <fieldset> class="box". -->
+  <main>
+    <h2>Order Ahead</h2>
+    <p>Fill in the form and your order will be ready when you arrive.</p>
+
+    <!--
+      action = where the data is sent. method = how it is sent.
+      In Class 5 we change this to action="place-order.php" method="post".
+    -->
+    <form action="order.html" method="get">
+
+      <fieldset>
+        <legend>Your details</legend>
+
+        <!-- Bootstrap form pattern (done for you): a div with mb-3, a form-label, and a form-control -->
+        <div class="mb-3">
+          <label for="name" class="form-label">Full name</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="e.g. Nur Aisyah" required>
+        </div>
+        <!-- TODO 19 (Part C): Email and Phone in the same pattern, side by side on laptops:
+             <div class="row"> with two <div class="col-md-6 mb-3">, each holding a label and an input -->
+        <p>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </p>
+        <p>
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="e.g. 012-345 6789">
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Your order</legend>
+
+        <!-- TODO 19 (Part C), continued: the same pattern for Item (class="form-select" on the <select>)
+             and Quantity, side by side: col-md-8 and col-md-4 -->
+        <p>
+          <label for="item">Item</label>
+          <select id="item" name="item" required>
+            <option value="">-- Choose an item --</option>
+            <optgroup label="Drinks">
+              <option value="espresso">Espresso</option>
+              <option value="latte">Latte</option>
+              <option value="matcha-latte">Matcha Latte</option>
+            </optgroup>
+            <optgroup label="Food">
+              <option value="croissant">Croissant</option>
+              <option value="muffin">Blueberry Muffin</option>
+              <option value="chocolate-cake">Chocolate Cake</option>
+            </optgroup>
+          </select>
+        </p>
+
+        <p>
+          <label for="quantity">Quantity</label>
+          <input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
+        </p>
+
+        <!-- Radio buttons: the same name means only ONE can be chosen -->
+        <!-- TODO 20 (Part C): Radio buttons and checkboxes. Change each "Size:" / "Extras:" <p> into <p class="mb-1">Size</p>
+             followed by a <div class="mb-3">. Wrap each input + label in <div class="form-check form-check-inline">,
+             with class="form-check-input" on the input and class="form-check-label" on the label. -->
+        <p>
+          Size:
+          <input type="radio" id="size-small" name="size" value="small">
+          <label for="size-small">Small</label>
+          <input type="radio" id="size-regular" name="size" value="regular" checked>
+          <label for="size-regular">Regular</label>
+          <input type="radio" id="size-large" name="size" value="large">
+          <label for="size-large">Large</label>
+        </p>
+
+        <!-- Checkboxes: any number can be chosen -->
+        <p>
+          Extras:
+          <input type="checkbox" id="extra-shot" name="extras" value="extra-shot">
+          <label for="extra-shot">Extra shot</label>
+          <input type="checkbox" id="oat-milk" name="extras" value="oat-milk">
+          <label for="oat-milk">Oat milk</label>
+          <input type="checkbox" id="whipped-cream" name="extras" value="whipped-cream">
+          <label for="whipped-cream">Whipped cream</label>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Pickup</legend>
+
+        <!-- TODO 20 (Part C), continued: form-check for the two radios; date and time side by side (col-md-6)
+             in the form pattern with form-control -->
+        <p>
+          <input type="radio" id="dine-in" name="pickup_type" value="dine-in" checked>
+          <label for="dine-in">Dine in</label>
+          <input type="radio" id="takeaway" name="pickup_type" value="takeaway">
+          <label for="takeaway">Takeaway</label>
+        </p>
+        <p>
+          <label for="pickup_date">Date</label>
+          <input type="date" id="pickup_date" name="pickup_date">
+        </p>
+        <p>
+          <label for="pickup_time">Time</label>
+          <input type="time" id="pickup_time" name="pickup_time" min="08:00" max="20:00">
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Anything else?</legend>
+
+        <!-- TODO 20 (Part C), continued: form-control on the textarea (remove cols, it's full width now)
+             and form-check for the agree checkbox -->
+        <p>
+          <label for="notes">Notes</label><br>
+          <textarea id="notes" name="notes" rows="4" cols="40" placeholder="e.g. less sugar, nut allergy"></textarea>
+        </p>
+        <p>
+          <input type="checkbox" id="agree" name="agree" value="yes" required>
+          <label for="agree">I understand payment is made at the counter.</label>
+        </p>
+      </fieldset>
+
+      <!-- TODO 20 (Part C), continued: buttons. Place order: class="btn btn-cafe btn-lg".
+           Clear form: class="btn btn-outline-secondary btn-lg". Remove the <p> around them. -->
+      <p>
+        <button type="submit">Place order</button>
+        <button type="reset">Clear form</button>
+      </p>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Bean &amp; Byte Café · <a href="mailto:hello@beanandbyte.example">hello@beanandbyte.example</a></p>
+  </footer>
+
+  <!-- TODO 18 (Part C): Add Bootstrap's <script> here, the same as in your index.html -->
+</body>
+</html>
