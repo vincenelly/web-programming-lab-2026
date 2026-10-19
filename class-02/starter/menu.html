@@ -26,11 +26,18 @@
     <!-- border="1" shows the table lines. It is temporary: in Class 3 we use CSS instead. -->
     <table border="1">
       <!-- TODO 1: Add a <caption> with the text: Bean &amp; Byte Café menu -->
+        <caption>Bean &amp; Byte Café menu</caption>
 
 
       <thead>
         <!-- TODO 2: Add one row (tr) with 4 heading cells (th):
              Photo | Item | Description | Price -->
+             <tr>
+               <th>Photo</th>
+               <th>Item</th>
+               <th>Description</th>
+               <th>Price</th>
+             </tr>
 
       </thead>
 
@@ -51,6 +58,18 @@
         <!-- TODO 3: Add two more drink rows in the same way:
              images/latte.svg        | Latte        | Espresso with steamed milk and a layer of foam. | RM 11.00
              images/matcha-latte.svg | Matcha Latte | Japanese green tea whisked with steamed milk.   | RM 13.00 -->
+             <tr>
+              <td><img src="images/latte.svg" alt="A cup of latte" width="80" height="80"></td>
+              <td>Latte</td>
+              <td>Espresso with steamed milk and a layer of foam.</td>
+              <td>RM 11.00</td>
+            </tr>
+            <tr>
+              <td><img src="images/matcha-latte.svg" alt="A cup of matcha latte" width="80" height="80"></td>
+              <td>Matcha Latte</td>
+              <td>Japanese green tea whisked with steamed milk.</td>
+              <td>RM 13.00</td>
+            </tr>
 
       </tbody>
 
@@ -60,14 +79,41 @@
              images/croissant.svg      | Croissant        | Buttery, flaky and baked fresh every morning. | RM 8.00
              images/muffin.svg         | Blueberry Muffin | Soft muffin packed with blueberries.          | RM 7.50
              images/chocolate-cake.svg | Chocolate Cake   | Rich chocolate cake. Our best seller!         | RM 12.00 -->
+             <tbody>
+                <tr>
+                  <th colspan="4">Food</th>
+                </tr>
+                <tr>
+                  <td><img src="images/croissant.svg" alt="A croissant" width="80" height="80"></td>
+                  <td>Croissant</td>
+                  <td>Buttery, flaky and baked fresh every morning.</td>
+                  <td>RM 8.00</td>
+                </tr>
+                <tr>
+                  <td><img src="images/muffin.svg" alt="A blueberry muffin" width="80" height="80"></td>
+                  <td>Blueberry Muffin</td>
+                  <td>Soft muffin packed with blueberries.</td>
+                  <td>RM 7.50</td>
+                </tr>
+                <tr>
+                  <td><img src="images/chocolate-cake.svg" alt="A slice of chocolate cake" width="80" height="80"></td>
+                  <td>Chocolate Cake</td>
+                  <td>Rich chocolate cake. Our best seller!</td>
+                  <td>RM 12.00</td>
+                </tr>
 
 
       <!-- TODO 5: Add a <tfoot> with one row and one cell that spans all 4 columns:
            Prices in RM, tax included. Images are for illustration only. -->
+           <tfoot>
+            <tr>
+              <td colspan="4">Prices in RM, tax included. Images are for illustration only.</td>
+            </tr>
 
     </table>
 
     <!-- TODO 6: Add a paragraph with a link to order.html that says "Ready to order?" -->
+    <p><a href="order.html">Ready to order?</a></p>
 
   </main>
 
