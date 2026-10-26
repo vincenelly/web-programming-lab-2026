@@ -1,0 +1,102 @@
+/*
+  Bean & Byte Café: our own styles.
+  This file is linked AFTER Bootstrap, so when both set the same thing, our rule wins.
+*/
+
+/* ---------- The whole site ---------- */
+
+/* The page: cream background, dark brown text, a clean font */
+body {
+  background-color: #fbf5ec;
+  color: #2a1d15;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Headings: a serif font in espresso brown */
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #3b2418;
+}
+
+/* Links: caramel, then espresso when you point at them */
+a {
+  color: #a8601f;
+}
+
+a:hover {
+  color: #3b2418;
+}
+
+/* A white box around each section (the box model) */
+.box {
+  background-color: #ffffff;
+  border: 1px solid #e6d9ca;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+/* Opening hours: the day on the left, the time on the right (flexbox) */
+.hours {
+  list-style: none;
+  padding: 0;
+}
+
+.hours li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dashed #e6d9ca;
+}
+
+/* The footer bar */
+footer {
+  background-color: #3b2418;
+  color: #fbf5ec;
+  text-align: center;
+  padding: 24px;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: #f6c98f;
+}
+
+/* ---------- Our touches on top of Bootstrap ---------- */
+
+/* Two classes of our own to use with Bootstrap:
+   bg-espresso for the navbar (Bootstrap's bg-dark is almost black),
+   btn-cafe for buttons: class="btn btn-cafe" */
+.bg-espresso {
+  background-color: #3b2418;
+}
+
+.btn-cafe {
+  background-color: #c8873a;
+  border-color: #c8873a;
+  color: #ffffff;
+}
+
+.btn-cafe:hover {
+  background-color: #3b2418;
+  border-color: #3b2418;
+  color: #ffffff;
+}
+
+/* Menu cards: photos all the same height, and prices that stand out */
+.menu-photo {
+  height: 200px;
+  padding: 16px;
+  object-fit: contain;
+  background-color: #f6ead9;
+}
+
+.price {
+  font-weight: 700;
+  color: #a8601f;
+}
