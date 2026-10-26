@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean &amp; Byte Café | Order</title>
+
+  <!-- Bootstrap, from a CDN (a fast server that hosts the file for everyone).
+       No internet? Use our local copy instead: href="css/bootstrap.min.css" -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <!-- Our own CSS comes AFTER Bootstrap, so our rules win -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-espresso">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <img src="images/logo.svg" alt="" width="40" height="40">
+          Bean &amp; Byte Café
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Show the menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="order.html">Order</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container py-4">
+    <h1>Order Ahead</h1>
+    <p class="lead">Fill in the form and your order will be ready when you arrive.</p>
+
+    <!--
+      action = where the data is sent. method = how it is sent.
+      In Class 5 we change this to action="place-order.php" method="post".
+    -->
+    <!-- data-price on the items, sizes and extras: order.js adds them up for the live total -->
+    <div class="row">
+      <div class="col-lg-8">
+        <form action="order.html" method="get" id="order-form">
+
+          <fieldset class="box">
+            <legend>Your details</legend>
+
+            <!-- Bootstrap form pattern: a div with mb-3, a form-label, and a form-control -->
+            <div class="mb-3">
+              <label for="name" class="form-label">Full name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="e.g. Nur Aisyah" required>
+            </div>
+            <!-- Two fields side by side on laptops, stacked on phones -->
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="e.g. 012-345 6789">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="box">
+            <legend>Your order</legend>
+
+            <div class="row">
+              <div class="col-md-8 mb-3">
+                <label for="item" class="form-label">Item</label>
+                <select class="form-select" id="item" name="item" required>
+                  <option value="">-- Choose an item --</option>
+                  <optgroup label="Drinks">
+                    <option value="espresso" data-price="7.00">Espresso (RM 7.00)</option>
+                    <option value="latte" data-price="11.00">Latte (RM 11.00)</option>
+                    <option value="matcha-latte" data-price="13.00">Matcha Latte (RM 13.00)</option>
+                  </optgroup>
+                  <optgroup label="Food">
+                    <option value="croissant" data-price="8.00">Croissant (RM 8.00)</option>
+                    <option value="muffin" data-price="7.50">Blueberry Muffin (RM 7.50)</option>
+                    <option value="chocolate-cake" data-price="12.00">Chocolate Cake (RM 12.00)</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="quantity" class="form-label">Quantity</label>
+                <input type="number" class="form-control" id="quantity" name="quantity" min="1" max="10" value="1">
+              </div>
+            </div>
+
+            <!-- Radio buttons: the same name means only ONE can be chosen -->
+            <p class="mb-1">Size</p>
+            <div class="mb-3">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="size-small" name="size" value="small" data-price="-1.00">
+                <label class="form-check-label" for="size-small">Small (−RM 1.00)</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="size-regular" name="size" value="regular" data-price="0" checked>
+                <label class="form-check-label" for="size-regular">Regular</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="size-large" name="size" value="large" data-price="2.00">
+                <label class="form-check-label" for="size-large">Large (+RM 2.00)</label>
+              </div>
+            </div>
+
+            <!-- Checkboxes: any number can be chosen -->
+            <p class="mb-1">Extras</p>
+            <div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="extra-shot" name="extras" value="extra-shot" data-price="2.00">
+                <label class="form-check-label" for="extra-shot">Extra shot (+RM 2.00)</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="oat-milk" name="extras" value="oat-milk" data-price="1.50">
+                <label class="form-check-label" for="oat-milk">Oat milk (+RM 1.50)</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="whipped-cream" name="extras" value="whipped-cream" data-price="1.50">
+                <label class="form-check-label" for="whipped-cream">Whipped cream (+RM 1.50)</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="box">
+            <legend>Pickup</legend>
+
+            <div class="mb-3">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="dine-in" name="pickup_type" value="dine-in" checked>
+                <label class="form-check-label" for="dine-in">Dine in</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="takeaway" name="pickup_type" value="takeaway">
+                <label class="form-check-label" for="takeaway">Takeaway</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="pickup_date" class="form-label">Date</label>
+                <input type="date" class="form-control" id="pickup_date" name="pickup_date">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="pickup_time" class="form-label">Time</label>
+                <input type="time" class="form-control" id="pickup_time" name="pickup_time" min="08:00" max="20:00">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="box">
+            <legend>Anything else?</legend>
+
+            <div class="mb-3">
+              <label for="notes" class="form-label">Notes</label>
+              <textarea class="form-control" id="notes" name="notes" rows="4" placeholder="e.g. less sugar, nut allergy"></textarea>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="agree" name="agree" value="yes" required>
+              <label class="form-check-label" for="agree">I understand payment is made at the counter.</label>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn btn-cafe btn-lg">Place order</button>
+          <button type="reset" class="btn btn-outline-secondary btn-lg">Clear form</button>
+        </form>
+      </div>
+
+      <!-- The live total. order.js writes into id="total". -->
+      <div class="col-lg-4">
+        <div class="box">
+          <h2 class="h4">Your total</h2>
+          <p class="price fs-2 mb-1" id="total">RM 0.00</p>
+          <p class="text-muted small mb-0">(item + size + extras) × quantity. Pay at the counter.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Bean &amp; Byte Café · <a href="mailto:hello@beanandbyte.example">hello@beanandbyte.example</a></p>
+  </footer>
+
+  <!-- Bootstrap's JavaScript makes the phone menu button work.
+       No internet? Use our local copy instead: src="js/bootstrap.bundle.min.js" -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+  <!-- TODO 9: Connect your JavaScript file. Write this line here, after Bootstrap's script:
+       <script src="js/order.js"></script> -->
+</body>
+</html>

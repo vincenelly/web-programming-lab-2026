@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean &amp; Byte Café | Menu</title>
+
+  <!-- Bootstrap, from a CDN (a fast server that hosts the file for everyone).
+       No internet? Use our local copy instead: href="css/bootstrap.min.css" -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <!-- Our own CSS comes AFTER Bootstrap, so our rules win -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-espresso">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <img src="images/logo.svg" alt="" width="40" height="40">
+          Bean &amp; Byte Café
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Show the menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="menu.html">Menu</a></li>
+            <li class="nav-item"><a class="nav-link" href="order.html">Order</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container py-4">
+    <h1>Our Menu</h1>
+    <p class="lead">All drinks come in regular size. Ask us about oat or soy milk.</p>
+
+    <!-- Filter buttons: data-filter says which category each one shows (menu.js) -->
+    <div class="btn-group mb-4" role="group" aria-label="Filter the menu" id="filters">
+      <button type="button" class="btn btn-outline-dark active" data-filter="all">All</button>
+      <button type="button" class="btn btn-outline-dark" data-filter="drinks">Drinks</button>
+      <button type="button" class="btn btn-outline-dark" data-filter="food">Food</button>
+    </div>
+
+    <!-- Each item has class="menu-item" and data-category="drinks" or "food", so menu.js can find and filter them -->
+    <div class="row">
+      <div class="col-12 col-sm-6 col-lg-4 mb-4 menu-item" data-category="drinks">
+        <div class="card h-100">
+          <img src="images/espresso.svg" class="card-img-top menu-photo" alt="A cup of espresso">
+          <div class="card-body">
+            <h3 class="card-title h5">Espresso</h3>
+            <p class="card-text">A short, strong shot of coffee.</p>
+          </div>
+          <div class="card-footer d-flex justify-content-between align-items-center">
+            <span class="price">RM 7.00</span>
+            <a href="order.html" class="btn btn-cafe btn-sm">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 mb-4 menu-item" data-category="drinks">
+        <div class="card h-100">
+          <img src="images/latte.svg" class="card-img-top menu-photo" alt="A glass of latte">
+          <div class="card-body">
+            <h3 class="card-title h5">Latte</h3>
+            <p class="card-text">Espresso with steamed milk and a layer of foam.</p>
+          </div>
+          <div class="card-footer d-flex justify-content-between align-items-center">
+            <span class="price">RM 11.00</span>
+            <a href="order.html" class="btn btn-cafe btn-sm">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 mb-4 menu-item" data-category="drinks">
+        <div class="card h-100">
+          <img src="images/matcha-latte.svg" class="card-img-top menu-photo" alt="A glass of matcha latte">
+          <div class="card-body">
+            <h3 class="card-title h5">Matcha Latte</h3>
+            <p class="card-text">Japanese green tea whisked with steamed milk.</p>
+          </div>
+          <div class="card-footer d-flex justify-content-between align-items-center">
+            <span class="price">RM 13.00</span>
+            <a href="order.html" class="btn btn-cafe btn-sm">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 mb-4 menu-item" data-category="food">
+        <div class="card h-100">
+          <img src="images/croissant.svg" class="card-img-top menu-photo" alt="A croissant">
+          <div class="card-body">
+            <h3 class="card-title h5">Croissant</h3>
+            <p class="card-text">Buttery, flaky and baked fresh every morning.</p>
+          </div>
+          <div class="card-footer d-flex justify-content-between align-items-center">
+            <span class="price">RM 8.00</span>
+            <a href="order.html" class="btn btn-cafe btn-sm">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 mb-4 menu-item" data-category="food">
+        <div class="card h-100">
+          <img src="images/muffin.svg" class="card-img-top menu-photo" alt="A blueberry muffin">
+          <div class="card-body">
+            <h3 class="card-title h5">Blueberry Muffin</h3>
+            <p class="card-text">Soft muffin packed with blueberries.</p>
+          </div>
+          <div class="card-footer d-flex justify-content-between align-items-center">
+            <span class="price">RM 7.50</span>
+            <a href="order.html" class="btn btn-cafe btn-sm">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 mb-4 menu-item" data-category="food">
+        <div class="card h-100">
+          <img src="images/chocolate-cake.svg" class="card-img-top menu-photo" alt="A chocolate cake with a cherry on top">
+          <div class="card-body">
+            <h3 class="card-title h5">Chocolate Cake</h3>
+            <p class="card-text">Rich chocolate cake. Our best seller!</p>
+          </div>
+          <div class="card-footer d-flex justify-content-between align-items-center">
+            <span class="price">RM 12.00</span>
+            <a href="order.html" class="btn btn-cafe btn-sm">Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-muted small">Prices in RM, tax included. Images are for illustration only.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Bean &amp; Byte Café · <a href="mailto:hello@beanandbyte.example">hello@beanandbyte.example</a></p>
+  </footer>
+
+  <!-- Bootstrap's JavaScript makes the phone menu button work.
+       No internet? Use our local copy instead: src="js/bootstrap.bundle.min.js" -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+  <!-- TODO 5: Connect your JavaScript file. Write this line here, after Bootstrap's script:
+       <script src="js/menu.js"></script> -->
+</body>
+</html>

@@ -7,7 +7,7 @@ Over 8 classes you'll build a working website for a (pretend) café at UNIMAS, *
 | 1 | [HTML basics](class-01/) | Your first page: headings, paragraphs, bold, line breaks, an embedded map |
 | 2 | [More HTML](class-02/) | Links, lists, images, a menu table, an order form |
 | 3 | [CSS + Bootstrap](class-03/) | Colours, fonts and layout; looks good on phones |
-| 4 | JavaScript | Interactive order form and live price total |
+| 4 | [JavaScript](class-04/) | Interactive order form and live price total |
 | 5 | PHP | Handle the order form on the server |
 | 6 | SQL + PHP | Store the menu and orders in a MySQL database |
 | 7 | Authentication + APIs | Staff login; a menu API |
