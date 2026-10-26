@@ -7,24 +7,35 @@
 
   <!-- TODO 8 (Part B): Add Bootstrap's CSS here, ABOVE your style.css link.
        Copy the <link> from the README. Then also do TODO 8 at the bottom of this file. -->
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
   <!-- TODO 1 (Part A): Link your stylesheet. Write this line here:
        <link rel="stylesheet" href="css/style.css"> -->
+       <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <!-- TODO 9 (Part B): Replace this whole <header> with the Bootstrap navbar from the README.
        Change bg-dark to bg-espresso (our colour, TODO 11). -->
   <header>
-    <img src="images/logo.svg" alt="Bean &amp; Byte Café logo" width="80" height="80">
-    <h1>Bean &amp; Byte Café</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="order.html">Order</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-espresso">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="images/logo.svg" alt="" width="40" height="40">
+        Bean &amp; Byte Café
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Show the menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="main-menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="order.html">Order</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
 
   <!-- TODO 10 (Part B):
        - Give <main> the classes container and py-4
@@ -34,58 +45,75 @@
        - Move the two links from "About us" here, as buttons:
          See our menu  -> class="btn btn-cafe btn-lg"
          Order ahead   -> class="btn btn-outline-dark btn-lg" -->
-  <main>
-    <section>
-      <img src="images/hero.svg" alt="A cup of coffee next to the words Bean and Byte Café" width="800" height="267">
-      <p><strong>Fresh coffee. Fast Wi-Fi.</strong></p>
-    </section>
+  
+<main class="container py-4">
+  <section class="text-center mb-4">
+    <img src="images/hero.svg"
+         alt="A cup of coffee next to the words Bean and Byte Café"
+         class="img-fluid rounded">
+    <h1 class="mt-4">Fresh coffee. Fast Wi-Fi.</h1>
+    <p class="lead">Your study spot at UNIMAS.</p>
 
-    <!-- class="box" is styled by you in TODO 5 -->
-    <!-- TODO 12 (Part B): Put "About us" and "Opening hours" side by side on laptops:
-         wrap both sections in <div class="row">, and each one in <div class="col-md-6"> -->
-    <section class="box">
-      <h2>About us</h2>
-      <p>
-        Your study spot at UNIMAS. We serve <strong>freshly roasted coffee</strong>,
-        homemade pastries and the fastest Wi-Fi on campus. Bring your laptop and stay a while.
-      </p>
-      <p><a href="menu.html">See our menu</a> or <a href="order.html">order ahead</a> and skip the queue.</p>
-    </section>
+    <div class="d-flex justify-content-center gap-2 flex-wrap mb-4">
+      <a href="menu.html" class="btn btn-cafe btn-lg">See our menu</a>
+      <a href="order.html" class="btn btn-outline-dark btn-lg">Order ahead</a>
+    </div>
+  </section>
 
-    <section class="box">
-      <h2>Opening hours</h2>
-      <!-- Each day and time is in its own <span>, so CSS can push them apart (TODO 6) -->
-      <ul class="hours">
-        <li><span>Monday – Friday</span> <span>8:00 am – 8:00 pm</span></li>
-        <li><span>Saturday</span> <span>9:00 am – 6:00 pm</span></li>
-        <li><span>Sunday</span> <strong>Closed</strong></li>
-      </ul>
-    </section>
+  <div class="row g-4">
+    <div class="col-md-6">
+      <section class="box h-100">
+        <h2>About us</h2>
+        <p>
+          Your study spot at UNIMAS. We serve
+          <strong>freshly roasted coffee</strong>,
+          homemade pastries and the fastest Wi-Fi on campus.
+          Bring your laptop and stay a while.
+        </p>
+      </section>
+    </div>
 
-    <section class="box">
-      <h2>Find us</h2>
-      <p>
-        Near the main library<br>
-        UNIMAS, Kota Samarahan<br>
-        Sarawak
-      </p>
-      <!-- TODO 13 (Part B): Make the map fit any screen. Wrap the iframe in <div class="ratio ratio-16x9">
-           and delete its width and height attributes. -->
+    <div class="col-md-6">
+      <section class="box h-100">
+        <h2>Opening hours</h2>
+        <ul class="hours">
+          <li><span>Monday – Friday</span> <span>8:00 am – 8:00 pm</span></li>
+          <li><span>Saturday</span> <span>9:00 am – 6:00 pm</span></li>
+          <li><span>Sunday</span> <strong>Closed</strong></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <section class="box mt-4">
+    <h2>Find us</h2>
+    <p>
+      Near the main library<br>
+      UNIMAS, Kota Samarahan<br>
+      Sarawak
+    </p>
+
+    <div class="ratio ratio-16x9">
       <iframe
         src="https://maps.google.com/maps?q=Universiti+Malaysia+Sarawak&z=15&output=embed"
-        width="600"
-        height="400"
         title="Map showing UNIMAS, where Bean &amp; Byte Café is"
         loading="lazy">
       </iframe>
-    </section>
-  </main>
+    </div>
+  </section>
+</main>
 
-  <footer>
-    <p>&copy; 2026 Bean &amp; Byte Café · <a href="mailto:hello@beanandbyte.example">hello@beanandbyte.example</a></p>
+
+    <footer>
+    <p>&copy; 2026 Bean &amp; Byte Café ·
+      <a href="mailto:hello@beanandbyte.example">
+        hello@beanandbyte.example
+      </a>
+    </p>
   </footer>
 
-  <!-- TODO 8 (Part B), continued: add Bootstrap's <script> here, just before </body>.
-       Copy it from the README. It makes the navbar's phone menu button work. -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
 </body>
 </html>
